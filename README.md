@@ -1,4 +1,2 @@
 # AeroAzure_Books
 
-Learning
-
