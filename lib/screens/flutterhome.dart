@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'bookListWidget.dart';
-import 'images.dart';
+import '../images.dart';
 
 class FlutterHomeApp extends StatefulWidget {
   FlutterHomeApp(
@@ -41,7 +41,15 @@ class _FlutterHomeAppState extends State<FlutterHomeApp> with TickerProviderStat
   Widget build(BuildContext context) {
     double unitHeightValue = MediaQuery.of(context).size.width * 0.01;
     double multiplier = 7;
+
+    final items = <Widget>[
+      Icon(Icons.home, size: 32),
+      Icon(Icons.mail, size: 32),
+      Icon(Icons.menu_book,size: 32),
+    ];
+
     return Scaffold(
+          extendBody: true,
           body: IndexedStack(
             index: _selectedTab,
             children: [
@@ -113,16 +121,12 @@ class _FlutterHomeAppState extends State<FlutterHomeApp> with TickerProviderStat
               BookListWidget(),
             ],
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            iconSize: 32,
-            unselectedFontSize: 14,
-            selectedFontSize: 16,
-            currentIndex: _selectedTab,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Главная'),
-              BottomNavigationBarItem(icon: Icon(Icons.mail), label: 'Контакты'),
-              BottomNavigationBarItem(icon: Icon(Icons.menu_book,), label: 'Книги'),
-            ],
+          bottomNavigationBar: CurvedNavigationBar(
+            height: 60,
+            color: Colors.grey.withOpacity(0.4),
+            backgroundColor: Colors.transparent,
+            index: _selectedTab,
+            items: items,
             onTap: onSelectTab,
           ),
         );

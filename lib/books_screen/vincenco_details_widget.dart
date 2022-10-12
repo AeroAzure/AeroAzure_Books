@@ -1,20 +1,18 @@
-import 'package:flutter/cupertino.dart';
+import 'package:aeroazure_books/images.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_tutorial/images.dart';
 import 'vincenco_bookMainWidget.dart';
 
 
-class BookDetailsWidget extends StatefulWidget {
-  final int bookid;
+class BookDetailsWidgetV extends StatefulWidget {
+   final int bookid;
 
-  BookDetailsWidget({Key? key, required this.bookid,}) : super (key: key);
+  BookDetailsWidgetV({Key? key, required this.bookid,}) : super (key: key);
 
   @override
-  _BookDetailsWidgetState createState() => _BookDetailsWidgetState();
+  _BookDetailsWidgetVState createState() => _BookDetailsWidgetVState();
 }
 
-class _BookDetailsWidgetState extends State<BookDetailsWidget> {
+class _BookDetailsWidgetVState extends State<BookDetailsWidgetV> {
 
   @override
   Widget build(BuildContext context){

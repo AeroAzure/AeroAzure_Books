@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:aeroazure_books/images.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/images.dart';
 
 class Books {
   final int id;
@@ -82,7 +81,8 @@ class _BookListWidgetState extends State<BookListWidget> {
 
   void _onBookTap(int index){
     final id = _books[index].id;
-    Navigator.of(context).pushNamed('/book_list/book_details', arguments: id,);
+    Navigator.of(context).pushNamed('/book_list/book_details',
+      arguments: id);
   }
 
   @override
